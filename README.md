@@ -22,13 +22,13 @@ Then, you can run one of the following commands.
 Exports the DialogFlow agent for the project under the account accessed by the
 credential file to the folder test.
 
-    dialogflow export --credentials ./credentials.json test/
+    dialogflow-cli export --credentials ./credentials.json test/
 
 ### Import
 
 Imports the DialogFlow agent from the folder to the project under the account
 accessed by the credential file from the folder test.
 
-    dialogflow import --credentials ./credentials.json test/
+    dialogflow-cli import --credentials ./credentials.json test/
 
 [quickstart]: https://github.com/dialogflow/dialogflow-nodejs-client-v2#quickstart

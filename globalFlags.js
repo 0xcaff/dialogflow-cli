@@ -1,13 +1,6 @@
 const { AgentsClient } = require("dialogflow");
 
 const handleArguments = async program => {
-  program.option(
-    "--credentials [path]",
-    "The path of the credentials json file."
-  );
-
-  program.parse(process.argv);
-
   // Assert Path
   const [path] = program.args;
   if (!path) {

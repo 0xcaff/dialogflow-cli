@@ -3,7 +3,7 @@ const { PassThrough } = require("stream");
 const unzip = require("unzip");
 const program = require("commander");
 
-const { handleArguments } = require("./globalFlags");
+const { handleArguments } = require("../globalFlags");
 
 const main = async () => {
   const { agent, path, parent } = await handleArguments(program);
@@ -19,4 +19,11 @@ const main = async () => {
   bufferStream.pipe(unzipper);
 };
 
-main();
+module.exports = program => {
+  program
+    .command("export [output]")
+    .description("Exports the dialogflow agent to the specified path.")
+    .action(() => {
+      main();
+    });
+};

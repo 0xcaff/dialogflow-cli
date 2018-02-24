@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 const program = require("commander");
+const { registerCommands } = require("../commands");
 
-program
-  .command(
-    "import [path]",
-    "Zips and imports the files at the specified path into the dialogflow agent"
-  )
-  .command(
-    "export [output]",
-    "Exports the dialogflow agent to the specified path."
-  )
-  .parse(process.argv);
+program.option(
+  "--credentials [path]",
+  "The path of the credentials json file."
+);
+
+registerCommands(program);
+
+program.parse(process.argv);

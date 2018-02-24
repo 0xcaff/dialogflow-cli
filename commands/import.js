@@ -1,9 +1,8 @@
-#!/usr/bin/env node
 const archiver = require("archiver");
 const program = require("commander");
 const getRawBody = require("raw-body");
 
-const { handleArguments } = require("./globalFlags");
+const { handleArguments } = require("../globalFlags");
 
 // Given a path, compress the files at the path and make a string of the
 // contents.
@@ -41,4 +40,13 @@ const main = async () => {
   await operation.promise();
 };
 
-main();
+module.exports = program => {
+  program
+    .command("import [path]")
+    .description(
+      "Zips and imports the files at the specified path into the dialogflow agent"
+    )
+    .action(() => {
+      main();
+    });
+};

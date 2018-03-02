@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const program = require("commander");
-const { registerCommands } = require("../commands");
+import program from "commander";
+import { registerCommands } from "../commands";
 
 program.option(
   "--credentials [path]",

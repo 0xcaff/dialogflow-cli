@@ -1,14 +1,7 @@
-const importCommand = require("./import");
-const exportCommand = require("./export");
+import importCommand from "./import";
+import exportCommand from "./export";
 
-const commands = {
-  importCommand,
-  exportCommand
-};
+const commands = [importCommand, exportCommand];
 
-const registerCommands = program =>
-  Object.entries(commands).forEach(([key, value]) => value(program));
-
-module.exports = {
-  registerCommands
-};
+export const registerCommands = program =>
+  commands.forEach(registerCommand => registerCommand(program));

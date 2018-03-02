@@ -1,7 +1,6 @@
-#!/usr/bin/env node
-const { PassThrough } = require("stream");
-const unzip = require("unzip");
-const program = require("commander");
+import { PassThrough } from "stream";
+import unzip from "unzip";
+import program from "commander";
 
 const { handleArguments } = require("../globalFlags");
 
@@ -19,7 +18,7 @@ const main = async () => {
   bufferStream.pipe(unzipper);
 };
 
-module.exports = program => {
+const attachCommand = program => {
   program
     .command("export [output]")
     .description("Exports the dialogflow agent to the specified path.")
@@ -27,3 +26,5 @@ module.exports = program => {
       main();
     });
 };
+
+export default attachCommand;

@@ -1,8 +1,8 @@
-const archiver = require("archiver");
-const program = require("commander");
-const getRawBody = require("raw-body");
+import archiver from "archiver";
+import program from "commander";
+import getRawBody from "raw-body";
 
-const { handleArguments } = require("../globalFlags");
+import { handleArguments } from "../globalFlags";
 
 // Given a path, compress the files at the path and make a string of the
 // contents.
@@ -13,6 +13,7 @@ const makeArchive = async path => {
   archive.on("warning", err => {
     if (err.code === "ENOENT") {
       // log warning
+      // eslint-disable-next-line no-console
       console.warn(err);
     } else {
       // throw error
@@ -40,7 +41,7 @@ const main = async () => {
   await operation.promise();
 };
 
-module.exports = program => {
+const attachCommand = program => {
   program
     .command("import [path]")
     .description(
@@ -50,3 +51,5 @@ module.exports = program => {
       main();
     });
 };
+
+export default attachCommand;

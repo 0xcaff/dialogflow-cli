@@ -1,6 +1,6 @@
-const { AgentsClient } = require("dialogflow");
+import { AgentsClient } from "dialogflow";
 
-const handleArguments = async program => {
+export const handleArguments = async program => {
   // Assert Path
   const [path] = program.args;
   if (!path) {
@@ -24,8 +24,4 @@ const handleArguments = async program => {
   const parent = agent.projectPath(auth.projectId);
 
   return { parent, auth, path, agent };
-};
-
-module.exports = {
-  handleArguments
 };

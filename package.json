@@ -18,13 +18,59 @@
     "unzip": "^0.1.11"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/runtime": "^7.0.0-beta.40",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.1",
     "prettier": "^1.10.2"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   },
   "config": {
     "prettierFiles": "{*,**/*}.{js,json} README.md"
   },
   "scripts": {
     "fix-style": "prettier --write $npm_package_config_prettierFiles",
-    "check-style": "prettier --list-different $npm_package_config_prettierFiles"
+    "check-style":
+      "prettier --list-different $npm_package_config_prettierFiles",
+    "lint": "eslint --ext .js src/",
+    "build": "babel -d lib/ src/",
+    "check-all": "yarn lint && yarn check-style",
+    "prepublishOnly": "yarn check-all",
+    "prepublish": "yarn build"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true,
+          "moduleName": "babel-runtime"
+        }
+      ]
+    ],
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "4"
+          }
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+    "env": {
+      "node": true
+    }
   }
 }

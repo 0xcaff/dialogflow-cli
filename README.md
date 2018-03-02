@@ -1,5 +1,7 @@
 # dialogflow-cli
 
+[![Build Status][build-status-image]][build-status]
+
 The missing command line interface for managing DialogFlow agents.
 
 ## Why?
@@ -31,4 +33,6 @@ accessed by the credential file from the folder test.
 
     dialogflow-cli import --credentials ./credentials.json test/
 
+[build-status-image]: https://img.shields.io/circleci/project/github/0xcaff/dialogflow-cli/master.svg
+[build-status]: https://circleci.com/gh/dialogflow-cli/master
 [quickstart]: https://github.com/dialogflow/dialogflow-nodejs-client-v2#quickstart

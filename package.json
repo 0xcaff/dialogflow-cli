@@ -1,11 +1,12 @@
 {
   "name": "dialogflow-cli",
   "version": "1.0.1",
-  "bin": "./bin/index.js",
-  "description": "A command line tool to import and export a Dialogflow agent.",
-  "main": {
-    "dialogflow": "index.js"
+  "bin": {
+    "dialogflow-cli": "./lib/bin/index.js",
+    "dialogflow": "./lib/bin/index.js"
   },
+  "description": "A command line tool to import and export a Dialogflow agent.",
+  "main": "index.js",
   "repository": "git@github.com:0xcaff/dialogflow-cli.git",
   "author": "Martin Charles <martincharles07@gmail.com>",
   "license": "MIT",

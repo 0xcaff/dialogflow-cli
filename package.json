@@ -1,6 +1,6 @@
 {
   "name": "dialogflow-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bin": {
     "dialogflow-cli": "./lib/bin/index.js",
     "dialogflow": "./lib/bin/index.js"

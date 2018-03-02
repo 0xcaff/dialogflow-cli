@@ -34,5 +34,5 @@ accessed by the credential file from the folder test.
     dialogflow-cli import --credentials ./credentials.json test/
 
 [build-status-image]: https://img.shields.io/circleci/project/github/0xcaff/dialogflow-cli/master.svg
-[build-status]: https://circleci.com/gh/dialogflow-cli/master
+[build-status]: https://circleci.com/gh/0xcaff/dialogflow-cli
 [quickstart]: https://github.com/dialogflow/dialogflow-nodejs-client-v2#quickstart

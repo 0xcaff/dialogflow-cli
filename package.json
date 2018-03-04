@@ -11,6 +11,7 @@
   "author": "Martin Charles <martincharles07@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.40",
     "archiver": "^2.1.1",
     "commander": "^2.14.1",
     "dialogflow": "^0.1.0",
@@ -22,7 +23,6 @@
     "@babel/core": "^7.0.0-beta.40",
     "@babel/plugin-transform-runtime": "^7.0.0-beta.40",
     "@babel/preset-env": "^7.0.0-beta.40",
-    "@babel/runtime": "^7.0.0-beta.40",
     "babel-eslint": "^8.2.2",
     "eslint": "^4.18.1",
     "prettier": "^1.10.2"

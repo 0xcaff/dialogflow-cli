@@ -11,7 +11,7 @@ rollbacks and keeping track of history difficult.
 
 ## Installation
 
-    yarn install dialogflow-cli
+    yarn global add dialogflow-cli
 
 ## Usage
 
